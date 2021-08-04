@@ -6,16 +6,23 @@ add_action('after_setup_theme', function(){
     add_image_size( 'new-archive', 385, 220, true );
     add_image_size( 'new-archive-large', 802, 220, true );
     add_image_size( 'card-header', 100, 100, true);
+    add_image_size('caroussel',900, 600, true);
 });
 
+
 function wptp_add_categories_to_attachments() {
-    register_taxonomy_for_object_type( 'category', 'attachment' );
+    register_taxonomy('media_categories', 'attachment', array('hierarchical' => true, 'label' => 'Media Categories', 'query_var' => true, 'has_archive' => true, 'rewrite' => array('slug' => 'media-category', 'with_front' => false)));
 }
 add_action( 'init' , 'wptp_add_categories_to_attachments' );
 
+/*function wptp_add_categories_to_attachments() {
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_categories_to_attachments' );*/
+
 
 // register new taxonomy which applies to attachments
-function wptp_add_location_taxonomy() {
+/*function wptp_add_location_taxonomy() {
     $labels = array(
         'name'              => 'Locations',
         'singular_name'     => 'Location',
@@ -40,4 +47,4 @@ function wptp_add_location_taxonomy() {
  
     register_taxonomy( 'location', 'attachment', $args );
 }
-add_action( 'init', 'wptp_add_location_taxonomy' );
+add_action( 'init', 'wptp_add_location_taxonomy' );*/

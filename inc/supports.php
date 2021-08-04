@@ -16,6 +16,7 @@ add_filter('upload_mimes', function ($mimes){
     return $mimes;
 });
 
+
 /**function newtheme_register_assets () {
     /**Ajout bootstrap popper & jquery + mise en footer avec true ds les arguments 
     wp_register_style('bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',[]);

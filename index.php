@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<div class="title"><h1><?php wp_title(); ?></h1>
+<div class="title"><h1><?php wp_title(''); ?></h1>
 
 <h1>index page</h1>
 </div>
