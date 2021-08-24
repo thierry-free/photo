@@ -8,14 +8,58 @@
   margin:0;
   padding:0;
 }
+body {
+  width: 100%;
+	border: none;
+	margin: 0px;
+	padding: 10px;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1500;
+  margin: 70px auto 0;
+  background:rgb(50, 50, 50);
+  color:#eee;
+  padding: 10px;
+}
+.main-home{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1500;
+  margin: 70px auto 0;
+  color:#eee;
+  padding: 10px;
+}
+
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+  background: rgb(155, 154, 155);
+}
 h1{
   color:gray;
 }
 h5{
   padding: 10px;
 }
+.title{
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
 .p-comment{
-  margin-top: 10px;
+  padding: 10px;
+  margin-top: auto, 10px;
   font-weight: lighter;
   font-style: italic;
   text-align: center;
@@ -24,17 +68,43 @@ h5{
 li, a, button{
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 1em;
   color:#eee;
   text-decoration: none;
 }
-header{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10px;
-  background: rgb(155, 154, 155);
+.menu-item-has-children > a::after{
+  content: " ▼";
+  font-size: 10px;
+  color: #000;
+
 }
+.sub-menu{
+  display: none;
+  box-shadow: 0px 1px 2px #ccc;
+  position: absolute;
+  z-index: 1000;
+}
+.sub-menu li{
+  float: none;
+  width: 100%;
+  text-align: left;
+  margin-bottom:10px ;
+}
+.sub-menu a{
+  padding: 10px;
+  margin-bottom: 10px;
+  color:#000;
+}
+nav ul li{
+  float: left;
+  text-align: center;
+  position: relative;
+}
+nav > ul li:hover .sub-menu{
+  display: block;
+  padding: 10px;
+}
+
  button{
   margin-left: 10px;
   padding: 9px 25px;
@@ -48,6 +118,15 @@ header{
   margin-left: 10px;
   padding: 9px 25px;
   background-color:#007bff;
+  border: none;
+  border-radius: 50px;
+  cursor:pointer;
+  transition: all 0.3s ease 0s;
+}
+.button-2{
+  margin-left: 10px;
+  padding: 15px 30px;
+  background-color:#ff9100;
   border: none;
   border-radius: 50px;
   cursor:pointer;
@@ -69,14 +148,12 @@ input{
 }
 .nav--link li{
   display: inline-block;
-  padding: 0px 5px;
+  padding: 0px 10px;
 }
 .nav--link li a {
   transition: all 0.3s ease 0s;
 }
-.nav--link li a:hover{
-  
-}
+
 .text-card{
   color: whitesmoke;
 }
@@ -90,38 +167,17 @@ input{
   font-size: larger;
 }
 
-.main{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 80%;
-  max-width: 1500;
-  margin: 70px auto 0;
-  background:rgb(50, 50, 50);
-  color:#eee;
-  padding: 10px;
-}
+
 .caroussel{
   display:inline-block;
-  max-width: 99%;
-  width: 910px;
+  max-width: 100%;
+  width: 720px;
   padding: 10px;
 }
-.img-caroussel{
-  
-}
-.main-home{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 80%;
-  max-width: 1500;
-  margin: 70px auto 0;
-  color:#eee;
-  padding: 10px;
-}
+
+
 .box-1{
-  width: 1280px;
+  width: 800px;
   margin-bottom: 10px;
   margin: 10px;
    overflow: hidden; 
@@ -142,11 +198,11 @@ input{
   text-align: center;
 }
 .box-2{
-  width: 600px;
+  width: 500px;
   margin:10px;
 }
 .box-2-v{
-  width: 600px;
+  width: 400px;
   margin:10px;
   margin-top: 50px;
 }
@@ -159,7 +215,7 @@ input{
   margin:10px;
 }
 .box-4{
-  width: 420px;
+  width: 350px;
   margin:10px;
 }
 .thumb{
@@ -178,17 +234,32 @@ input{
 
 .photo{
   width:100%;
-  
 }
 
-
-.title{
-  background-color: white;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+.card-v{
+  color: #000;
   text-align: center;
+  width: 25%;
+  height: 630px;
+  padding:10px;
+  margin:5px;
+  border-radius:10px ;
+  border-style:solid;
+  border-color: #000;
+}
+.card-v h2{
+  font-size: larger;
+  margin-top: 1em;
+}
+.card-v a{
+  color: grey;
+  font-size: medium;
+}
+.card-v li{
+  list-style: none;
+}
+.card-v p{
+  justify-self: normal;
 }
 
 
@@ -197,3 +268,61 @@ input{
   padding-top: 10px;
 }
 
+.pagination {
+  width: 80%;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+.pagination svg {
+  width: 16px;
+  height: 16px;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+.pagination span[aria-current] {
+  color: #F80303;
+}
+.pagination ul{
+  position: absolute;
+  left: 50%;
+}
+.pagination li{
+  list-style: none;
+  color: #000;
+  padding-left: 10px;
+  padding-right:10px ;
+}
+
+.pagination a:hover {
+  color: #f80303;
+}
+
+.pagination a svg {
+  transition: transform 0.3s;
+}
+
+.pagination a:hover svg {
+  transform: translateX(3px);
+}
+@media all and (max-width: 890px){
+.card-v{
+  height: auto;
+}
+a.button-2{
+ font-size: 0.5em;
+ font-weight: bold;
+ color: #eee;
+}
+}
+@media all and (max-width: 681px){
+
+  .card-v{
+    width:80% ;
+  }
+}

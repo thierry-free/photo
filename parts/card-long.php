@@ -8,7 +8,7 @@
                 <h5><?php the_title( ) ?> - <?php the_date( )?> </h5>
                 </div>
                 <div>
-                <p class=".p-comment">
+                <p class="p-comment">
                         <?php the_excerpt('Voir plus') ?></p>
                     <a href="<?php the_permalink() ?>" class="button">Voir l'article</a>
                 </div> 

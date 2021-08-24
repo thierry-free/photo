@@ -8,12 +8,12 @@ home page: <div class="title"><h1>LES <?php wp_title(''); ?></h1></div>
     
         <?php while (have_posts()) : the_post(); ?>
         
-        <?php get_template_part('parts/card-long','post');?>
+        <?php get_template_part('parts/card','post');?>
         
         <?php endwhile ?>
     
-    <?= newtheme_pagination()?>
-    <?= paginate_links(); ?>
+     <?=newtheme_pagination();?>
+    
     
 <?php else : ?>
     <h1>Pas d'article</h1>
@@ -28,4 +28,4 @@ home page: <div class="title"><h1>LES <?php wp_title(''); ?></h1></div>
 
 
 
-<?php get_footer() ?><div clas="col-sm-4">
+<?php get_footer() ?>

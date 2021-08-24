@@ -3,9 +3,10 @@
 
 </div>
 
-
 <div class="main">
-<?= maselection_show() ?>
+  <?php get_the_title() ?>
+<?php get_the_content( ) ?>
+<!--
 <div class="box-1">
     <img class="photo" src="wp-content\themes\NewTheme\assets\images\_MG_3342.jpg">
     <p class="p-comment">  Fleury d'Aude - Plage des Cabannes</p></div>
@@ -27,9 +28,9 @@
 
 
   <div class="box-1">
-    
+   
   <img class="photo" src="wp-content\themes\NewTheme\assets\images\Coquelicots.jpg' ">
-    </a>
+    
   <p class="p-comment"> Panorama - Les Coquelicots</p>
 </div>
   <div class="border-bottom separ"></div>
@@ -122,7 +123,7 @@
     <p class="p-comment"> Le Moulin de Mauriçou - Lespignan</p>
   </div>
 <div class="border-bottom separ"></div>
-
+-->
 </div>
   
 

@@ -2,7 +2,7 @@
 
 
 
-        <h1>Ouuups !!!!</h1>
+        <h1>Page 404 - Ouuups !!!!</h1>
 
      <p>La page demandée n'existe pas ou a été supprimée !</p>
 

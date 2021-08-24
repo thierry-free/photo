@@ -3,10 +3,11 @@
 }
 .column-sponso{
     vertical-align: middle!important;
-    text-align: center;
+    text-align: right;
 }
 .column-sponso .bullet {
     display: inline-block;
+    text-align: center;
     width: 10px;
     height: 10px;
     border-radius: 10px;
@@ -15,4 +16,5 @@
 }
 .column-sponso .bullet-no {
     background:red;
+    text-align: center;
 }
