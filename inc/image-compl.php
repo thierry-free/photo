@@ -11,7 +11,7 @@ Author: Thierry MOGINOT
 /**
  * Initialisation
  */function wptp_add_categories_to_attachments() {
-    register_taxonomy_for_object_type( 'category', 'attachment',array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'has_archive' => true, 'rewrite' => array('slug' => 'category', 'with_front' => false))); 
+register_taxonomy_for_object_type( 'category', 'attachment',array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'has_archive' => true, 'rewrite' => array('slug' => 'category', 'with_front' => false))); 
 }
 add_action( 'init' , 'wptp_add_categories_to_attachments' );
 
@@ -44,7 +44,7 @@ function wptp_add_localisation_taxonomy() {
 }
 add_action( 'init', 'wptp_add_localisation_taxonomy' );
 
-function wptp_add_affichage_taxonomy() {
+function add_affichage_taxonomy() {
     $labels = array(
         'name'              => 'Affichages',
         'singular_name'     => 'Affichage',
@@ -63,11 +63,13 @@ function wptp_add_affichage_taxonomy() {
         'labels' => $labels,
         'hierarchical' => true,
         'query_var' => 'true',
+        'show_in_rest'=> 'true',
         'rewrite' => 'true',
         'show_admin_column' => 'true',
     );
  
-    register_taxonomy( 'affichage', 'attachment', $args );
+    register_taxonomy( 'affichage','selectionpage', $args );
+    
 }
-add_action( 'init', 'wptp_add_affichage_taxonomy' );
+add_action( 'init', 'add_affichage_taxonomy' );
 ?>

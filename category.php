@@ -3,13 +3,14 @@ get_header( );
 ?>
 
 
-
+<h1><?php//the_category();?></h1>
 <div class="main">
 <div class="box-1">
-        <h1><?php the_category();?></h1>
+        
+        
     </div>
     <div class="border-bottom separ"></div>
-    <div class="caroussel  js-slider">
+    <p class="p-comment cat-hide">Cliquez sur la photo pour la voir entière</p>
     <?php  
     $category = get_category( get_query_var( 'cat' ) );
     //var_dump($category);
@@ -19,6 +20,7 @@ get_header( );
     $images = get_posts( array('post_type' => 'attachment', 'category__in' => $cat_id));
     //var_dump($images);
     if ( !empty($images) ):?> 
+    <div class="caroussel  js-slider"> 
         <?php foreach ( $images as $image ): 
         //var_dump($image);
             //$image_url = $image->guid;?>
@@ -37,9 +39,9 @@ get_header( );
             //var_dump($title); 
             //var_dump($description);
             ?>
-            
-           <a href="<?=wp_get_attachment_url($image->ID)?>"> <h3 class="p-comment" ><?=$title ?></h3>
-          <img src= '<?= wp_get_attachment_url($image->ID,'new-image');?>'>
+           
+           <a href="<?=wp_get_attachment_url($image->ID,'full')?>"> <h3 class="p-comment" ><?=$title ?></h3>
+          <img width="99%" src= '<?= wp_get_attachment_url($image->ID,'photo',true);?>'>
            
 
           <p class="p-comment"><?= $description ?></p>
@@ -48,6 +50,7 @@ get_header( );
         <?php endforeach ?>
     <?php else :?>
         <div class="box-1">
+            <img width="100px" src="/wp-content/themes/NewTheme/assets/images/moi.png">
             <h2>Oupsss !! Aucune Photo pour cette demande</h2>
         </div>
 
@@ -66,16 +69,5 @@ wp_reset_postdata();
 
 
 
-
-
-
-       
-
-     
-
-
-
 </div>
-<?php
-get_footer();
-?>
+<?php get_footer();?>

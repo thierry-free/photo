@@ -12,7 +12,7 @@
 
                     <p >
                         <?php the_excerpt('Voir plus') ?></p>
-                        <div class="separ"></div>
+                        <div class="border-bottom separ"></div>
                     <a href="<?php the_permalink() ?>" class="button-2">Voir plus</a>
                     <div class="separ"></div>
                 </div>

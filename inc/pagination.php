@@ -3,10 +3,11 @@ function newtheme_pagination (){
     $pages = paginate_links(['type' => 'array']);    /**récupération sous forme de tableau */
     if ($pages === null) {  /**Si il n'y a pas plusieurs pages  */
          return;                /**renvoi */
-     }
-    echo '<div class="pagination">';
-    echo '<nav label="pagination" >'; /**récupération de la mise en page bootstrap */
-    echo '<ul class="pagination">';                     /**"""" */
+     } ?>
+    <div class="pagination">
+    <nav label="pagination" > 
+    <ul class="pagination">
+        <?php                     /**"""" */
     $pages = paginate_links(['type' => 'array']);
     /**var_dump($page);*/
     foreach($pages as $page){
@@ -19,10 +20,11 @@ function newtheme_pagination (){
         echo str_replace('page-numbers','page-link', $page);
         echo '</li>';
 
-    }
-    echo '</ul>';
-    echo '</nav>';
-    echo '</div>';
+    }?>
+    </ul>
+    </nav>
+    </div>
+    <?php
 }
 
 ?>

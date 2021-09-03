@@ -3,9 +3,15 @@
 <h1> Template Archives</h1>
 </div>
 <div class="container">
-<?php if (have_posts()) : ?>
+<?php
+$query = new WP_Query( array(
+    //'orderby' => 'rand',
+    'posts_per_page' => 1,
+    //'ignore_sticky_posts' => 1,
+) ); ?>
+<?php if ($query->have_posts()) : ?>
     <div class="row">
-        <?php while (have_posts()) : the_post(); ?>
+        <?php while ($query->have_posts()) : $query->the_post($query); ?>
     
         <div clas="col-lg-10 offset-2" style="width: 18rem;">
             <div class="card" >
@@ -35,7 +41,7 @@
         </div>
         <?php endwhile ?>
     </div>
-    // newtheme_pagination()
+    <?php newtheme_pagination();?>
 <?php else : ?>
     <h1>Pas d'article</h1>
 
@@ -49,4 +55,4 @@
 
 
 
-<?php get_footer() ?><div clas="col-sm-4">
+<?php get_footer() ?>

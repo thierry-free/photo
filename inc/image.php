@@ -8,7 +8,7 @@ add_action('after_setup_theme', function(){
     add_image_size('photo-pano', 800, 197,true);
     add_image_size('photo-vert',360,531,true);
     add_image_size('photo-vert-2',600,886,true);
-    add_image_size( 'photo-large', 800, 533, true );
+    add_image_size( 'photo-large', 1000, 700, true );
     add_image_size( 'card-header', 100, 100, true);
     add_image_size('caroussel',900, 600, true);
     add_image_size('full',1980,1320,true);

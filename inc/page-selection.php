@@ -29,13 +29,10 @@ register_post_type('selectionpage',[
             'show_in_rest' =>true,  
             'has_archive' =>true,  
          //'rewrite' => array('slug' => 'shoots'),
-           'taxonomies'  => array( 'category' ),
+           'taxonomies'  => array( 'category','affichage' ),
             
 ]);
 }
-
-
-
 
 
 
@@ -49,6 +46,7 @@ add_filter('manage_selectionpage_posts_columns',function($columns){
     'thumbnail' => 'Miniature', /*Nouvelle colonne*/
     'title' =>$columns['title'],
     'categories'=>$columns['categories'],
+    'taxonomies' =>$columns['affichage'],
     'date' =>$columns['date'],
     ];
 });
@@ -59,38 +57,75 @@ add_filter('manage_selectionpage_posts_custom_column',function ($column, $postId
        the_post_thumbnail('thumbnail', $postId);
    }   
 },10,2);
-
+add_filter('manage_selectionpage_posts_columns', function ($columns){
+    $newColumns =[];
+    foreach($columns as $k => $v){
+        if ($k === 'date'){
+            $newColumns['affichage'] = 'taille';
+        }
+        $newColumns[$k] = $v;
+    }
+    return $newColumns;
+});
+/**
+ * Selection des images depuis les posts selection
+ * avec recuperation de la class (taille affichage)
+ */
 function maselection_show(){
-    
-    
-    $selection = new WP_query("post_type=selectionpage");
+  
+            
+            $selection = new WP_query(array(
+                'post_type'=>'selectionpage',
+                'posts_per_page'=>30,
+            ));
+    //var_dump($selection);
     
     while($selection->have_posts()){
             $selection->the_post();
             global $post;
-            //var_dump($post);
-            $ima_id = $post->ID;
-            $title=$post->post_title;               
-             //var_dump($ima_id);
-            //var_dump(wp_get_attachment_url($ima_id));?>
+            
+    
+            $taxonomy = get_the_terms( get_the_ID(), 'affichage' );
+               // var_dump($taxonomy);
+                foreach ( $taxonomy as $tax ) {
+                    //var_dump($tax->slug);
+                     //echo esc_html( $tax->name ); 
+                     $class=($tax->slug);
+                        //$class=($tax->name);
+                     //var_dump($class);?>
+                    <div class="<?= $class?>">
+                    <?php
 
-<img src= '<?= wp_get_attachment_url($ima_id,'photo-large');?>'>
+                        $image_id = get_post_thumbnail_id();
+                        $img_src = wp_get_attachment_image_url( $image_id,$class );
+                        $img_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>
+                   <!--
+                   *Récupération des exifs
+                -->
+                   <?php $datas = wp_get_attachment_metadata( $image_id ); // les métadonnées du média
+                   //var_dump($datas);
+                   $metas = $datas['image_meta'];
+                   $camera = $metas['camera'];
+                   $focale= $metas['focal_length'];
+                   $aperture = round ( $metas['aperture'], 1 );
+                   $speed = round (1/ $metas['shutter_speed'] );
+                   $iso = $metas['iso'];?>
+                    
+                    
+                   <!--affichage--> 
+                
+                    <p class="p-comment"><?php the_title();?></p>
+                    <img width="98%" src="<?php echo esc_attr( $img_src ); ?>"  alt="<?php echo $img_alt; ?>">
+            
+                    <p class="p-comment"><?=$camera .' - '. $focale.'mm - f/' .$aperture .' - 1/'.$speed. 's - '.$iso.'iso' ?> </p>
+                    <?php
+                            
+                           
+                    ?>
+                    </div>
 
-</a>
-
-
-           <div>
-            <a href="<?=wp_get_attachment_url($ima_id)?>"> <h3 class="p-comment" ><?=$title ?></h3>
-           <?php the_post_thumbnail('photo-large');?>
-        </a></div>
-        <div class='border-bottom separ'></div>
-        <?php
-}  
-}
-
-
-
-
-?>
-
-
+                    <?php
+            } };              
+    }
+            
+    ?>

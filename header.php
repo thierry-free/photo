@@ -13,24 +13,26 @@
 
 
 <header >
-  
+  <div class="tete">
   <a href="<?= home_url('/'); ?>" class="" title="<?php bloginfo('name') ?>">
-    <img class="logo" src="<?= get_theme_mod('logo') ?>" alt="<?php bloginfo('name') ?>">
+    <img  class="logo_head" src="<?= get_theme_mod('logo') ?>" alt="<?php bloginfo('name') ?>">
   </a>
-  
+  </div>
 
   
-<nav>
+<nav class="nav-tete">
   <?php wp_nav_menu(['theme_location'=>'header',
     'container'=> false,
     'menu_class'=>'nav--link'
     ])
     ?> 
   </nav>
-
-  <div class="cta">
-    <?= get_search_form() ?>
+  <div class="search_element cat-hide-big">
+    <?= get_search_form(); ?>
   </div>
 </header>
-
+<div class="search_element cat-hide">
+    <?= get_search_form(); ?>
+  </div>
+  <div class="border-bottom separ"></div>
 

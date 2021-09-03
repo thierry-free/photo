@@ -21,9 +21,138 @@ body {
   width: 90%;
   max-width: 1500;
   margin: 70px auto 0;
-  background:rgb(50, 50, 50);
-  color:#eee;
+  background:rgb(12, 12, 12);
+  color:rgb(8, 8, 8);
   padding: 10px;
+}
+.main-index{
+  display: block;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1500;
+  margin: 70px auto 0;
+  background:rgba(139, 138, 138, 0.219);
+  color:rgb(8, 8, 8);
+  padding: 10px;
+  padding-bottom: 50px;
+}
+.main-index h2{
+margin-left:35%;
+}
+.main-index h3{
+  margin-left:5%;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  }
+.main-index a{
+  color: #429cd6;
+  font-weight: 500;
+  font-size: medium;
+}
+.main-index p{
+  margin: 10px;
+  margin-bottom: 10px;
+}
+.main-index ul{
+  margin-left: 50px;
+}
+.main-index li{
+  color: #000;
+  font-size: medium;
+  font-weight: 500;
+}
+.main-index .social-rocket-inline-buttons{
+  display: none;
+}
+.main2{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1500;
+  margin: 70px auto 0;
+  background:rgba(139, 138, 138, 0.219);
+  color:rgb(8, 8, 8);
+  padding: 10px;
+}
+.main2 h2{
+  color: #0d77b7;
+}
+.main2 .p-comment{
+  color:peru;
+}
+
+.contact_main{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  max-width: 1500;
+  margin: 70px auto 0;
+  background:rgba(131, 130, 130, 0.445);
+  color:rgb(8, 8, 8);
+  padding: 10px;
+}
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"]{
+  height: 30px;
+}
+.wpcf7 button{
+  background-color: green;
+}
+.d_contact{
+  width: 90%;
+}
+.d__contact1{
+  display: inline-block;
+  align-content: center;
+  width: 150px;
+  height: 80px;
+}.d__contact2{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.2em;
+  font-weight: bold;
+  height: 80px;
+  width: 55%;
+}
+.d__contact2 p{
+  float: left;
+  
+  
+}
+.a_propos{
+  display: flex;
+ 
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  
+  max-width: 1500;
+  margin: 70px auto 0;
+  background:rgba(156, 152, 152, 0.144);
+  color:rgb(7, 7, 7);
+  padding: 10px;
+}
+.a_propos a{
+  color: purple;
+  font-size: 0.8em;
+}
+.d_propos{
+  text-align: center;
+  vertical-align: middle;
+  width: 40%;
+  height: 1600px;
+  float: left;
+}
+.d_propos img{
+margin-top: 60%;
+margin-left: 25%;
+}
+.p_propos{
+  font-size: 1.5em;
+  text-align: justify;
 }
 .main-home{
   display: flex;
@@ -38,10 +167,20 @@ body {
 
 header{
   display:flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   padding: 30px 10px;
   background: rgb(155, 154, 155);
+}
+footer{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 30px 10px;
+  background: rgb(8, 8, 8);
+  font-size: 1em;
+  color: #ccc;
+
 }
 h1{
   color:gray;
@@ -60,11 +199,13 @@ h5{
 .p-comment{
   padding: 10px;
   margin-top: auto, 10px;
+  font-size: 1em;
   font-weight: lighter;
   font-style: italic;
   text-align: center;
   color: beige;
 }
+
 li, a, button{
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -140,19 +281,62 @@ input{
   border-radius: 10px;
   color: rgb(155, 154, 155);
 }
-.logo{
+.logo_head{
+  width:80%;
   cursor:pointer;
+  margin-left: 20%;
+}
+.logo_foot{
+  width:60%;
+  cursor:pointer;
+  margin-left: 20%;
+}
+.tete{
+  float: right;
+  width: 20%;
+}
+.foot{
+  width: 10%;
+  align-content: center;
+  background:grey
+  ;
+}
+.sociaux{
+  margin-right: 30px;
+}
+.nav-tete{
+  float: left;
 }
 .nav--link{
   list-style:none ;
 }
 .nav--link li{
+  float: left;
   display: inline-block;
   padding: 0px 10px;
+}
+.nav--link ul{
+  background-color: #ccc;
 }
 .nav--link li a {
   transition: all 0.3s ease 0s;
 }
+.foot-nav-link{
+  list-style:none ;
+}
+.foot-nav-link li{
+  float: left;
+  display: inline-block;
+  padding: 0px 10px;
+}
+.foot-nav-link  a{
+font-size: 13px;
+font-weight: lighter;
+}
+.foot-nav-link li a{
+  font-size: 13px;
+  font-weight: lighter;
+  }
 
 .text-card{
   color: whitesmoke;
@@ -166,17 +350,48 @@ input{
   font-weight: bold;
   font-size: larger;
 }
+.search_element{
+  display: block;
+  float: right;
+}
+.search_element input{
+  border-radius: 2px;
+  margin-top: 5px;
+  background-color: rgb(236, 230, 230);
+  height: 2em;
+  width: 10em;
+}
+.search_element button{
+  margin-top:5px ;
+  margin-left: -5px;
+  border-radius: 2px;
+  height: 1.7em;
+  color: rgb(8, 8, 8);
+  background-color: green;
+}
 
+.cat-hide{
+  display: none;
+}
+.cat-hide-big{
+  margin-right: 30px;
+}
 
 .caroussel{
   display:inline-block;
-  max-width: 100%;
+  max-width: 85%;
   width: 720px;
   padding: 10px;
 }
 
+.social-rocket-inline-buttons{
+  margin-top: 50px;
+ 
+  margin-right: -50px;
+}
 
 .box-1{
+  color: #ccc;
   width: 800px;
   margin-bottom: 10px;
   margin: 10px;
@@ -223,17 +438,35 @@ input{
   height:250px;
   margin:10px;
 }
-.desc{
-  
-}
+
 .separ{
-  width: 80%;
+  width: 90%;
   height: 30px;
   margin-bottom: 50px;
 }  
-
+.boxphoto{
+  max-width: 80%;
+  margin:20px;
+  padding: 10px;
+}
 .photo{
   width:100%;
+}
+.photo-large{
+  
+  margin:20px;
+  max-width: 80%;
+  width: 1500px;
+}
+.photo-double{
+  margin:20px;
+  max-width: 80%;
+  width: 500px;
+}
+.photo-triple{
+  margin:20px;
+  max-width: 80%;
+  width: 350;
 }
 
 .card-v{
@@ -269,9 +502,11 @@ input{
 }
 
 .pagination {
-  width: 80%;
+  width: 100%;
+  height: 50px;
   text-align: center;
   font-size: 0.9em;
+  margin: auto;
   margin-top: 0.5em;
 }
 
@@ -290,7 +525,7 @@ input{
 }
 .pagination ul{
   position: absolute;
-  left: 50%;
+  left: 40%;
 }
 .pagination li{
   list-style: none;
@@ -310,6 +545,11 @@ input{
 .pagination a:hover svg {
   transform: translateX(3px);
 }
+@media all and (max-width: 700px){
+  .contact_main{
+    width: 90%;
+}
+}
 @media all and (max-width: 890px){
 .card-v{
   height: auto;
@@ -319,10 +559,139 @@ a.button-2{
  font-weight: bold;
  color: #eee;
 }
+}large
+
+@media all and(max-width :1600px){
+  .photo-large{
+  
+    
+    width: 1000px;
+  }
+
+}
+@media all and (max-width : 1000px){
+  .d_propos{
+    height: auto;
+  }
+  .p_propos{
+    font-size: 1em;
+  }
 }
 @media all and (max-width: 681px){
-
+.d_propos{
+  width: 80%;
+}
+.d_propos img{
+  margin-top: 1%;
+  margin-left: 2%;
+}
   .card-v{
     width:80% ;
   }
+  .pagination ul{
+    position: absolute;
+    left: 25%;
+  }
+  .nav--link a{
+    font-size: 0.5em;
+  }
+  .nav--link li{
+  
+    display: inline-block;
+    padding: 5px 3px;
+  }
+  .tete{
+    width: 20%;
+  }
+  .cat-hide{
+    display: inline-block;
+  }
+  .cat-hide-big{
+    display: none;
+  }
+  .p_propos{
+    font-size: 1em;
+  }
 }
+/* ## Social Share Buttons
+--------------------------------------------- */
+.social {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -30px;
+  clear: both;
+  display: -webkit-flex;
+  border: 1px solid #dfdfdf;
+  /* border-bottom: 1px solid #dfdfdf; */
+  padding: 5px 10px;
+  /* box-shadow: 0 0 27px 0 rgba(214, 231, 233, 0.52); */
+  /* border-radius: 3px; */
+  }
+  .social-link {
+  color: #fff!important;
+  border-radius: 2px;
+  margin: 2px;
+  cursor: pointer;
+  display: inline-block;
+  transition: .4s;
+  vertical-align: middle;
+  width: 140px;
+  height: 26px
+  }
+  .social-link:hover {
+  width: 230px!important;
+  }
+  .social-social:hover .social-link {
+  width: 160px
+  }
+  .social-link i {
+  color: #fff;
+  margin-top: 8px;
+  }
+  .social-link a {
+  padding-left: 42%;
+  text-decoration: none!important
+  }
+  .social-link:hover a {
+  padding-left: 30%;
+  transition: .5s
+  }
+  .social-link .smi_share {
+  margin: 10px;
+  display: none;
+  transition: 1s;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none
+  }
+  .social-link:hover .smi_share {
+  display: inline
+  }
+  .social-facebook {
+  background: #3a589e
+  }
+  .social-twitter {
+  background: #429cd6
+  }
+  .social-googleplus {
+  background: #36cc12
+  }
+  .social-buffer {
+  background: #444
+  }
+  .social-linkedin {
+  background: #0d77b7
+  }
+  .social-pinterest {
+  background: #cd2029
+  }
+  @media only screen and (max-width:) {
+  .social-link a {
+  }
+  .social-link,.social-link:hover {
+  width: auto!important
+  }
+  .social-link:hover .smi_share {
+  display: none
+  }
+  }
